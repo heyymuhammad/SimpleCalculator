@@ -1,57 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="/calculator.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- <script src="/calculator.js"></script> -->
 
     <title>Simple Calculator</title>
     <style>
-        *{
-            font-family:sans-serif ;
+        * {
+            font-family: sans-serif;
         }
-        p{
+
+        p {
             font-size: 40px;
         }
-        .cross:hover{
+
+        .cross:hover {
             color: gray;
         }
-        
     </style>
 </head>
+
 <body>
     <!-- calculator -->
     <center>
-     
-    <div class="container mt-0 m-3 p-4 pt-0 border border-primary" style="width: 245px; padding: 0; margin: 0;">
-        <center><img src="/logo.png" alt="MU" style="width: 40px; "></center>
-        <div class="input p-2" style="border: 1px solid black; color:darkgray;height: 40px;" id="input">
+
+        <div class="container mt-0 m-3 p-4 pt-0 border border-primary" style="width: 245px; padding: 0; margin: 0;">
+            <center><img src="/logo.png" alt="MU" style="width: 40px; "></center>
+            <div class="input p-2" style="border: 1px solid black; color:darkgray;height: 40px;" id="input">
+            </div>
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="7"
+                onclick="n7()">7</button>
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="8"
+                onclick="n8()">8</button>
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="9"
+                onclick="n9()">9</button>
+            <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="+"
+                onclick="nplus()">+</button>
+
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="4"
+                onclick="n4()">4</button>
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="5"
+                onclick="n5()">5</button>
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="6"
+                onclick="n6()">6</button>
+            <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="-"
+                onclick="nminus()">-</button>
+
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="1"
+                onclick="n1()">1</button>
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="2"
+                onclick="n2()">2</button>
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="3"
+                onclick="n3()">3</button>
+            <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="x"
+                onclick="nmultiply()">x</button>
+
+            <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="0"
+                onclick="n0()">0</button>
+            <button type="submit" class="btn btn-outline-primary mt-2" style="width:45px;" id="AC"
+                onclick="AC()">AC</button>
+            <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="="
+                onclick="nequal()">=</button>
+            <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="%"
+                onclick="ndivide()">/</button>
+
         </div>
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="7" onclick="n7()">7</button>
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="8" onclick="n8()">8</button>
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="9" onclick="n9()">9</button>
-        <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="+" onclick="nplus()">+</button>
-
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="4" onclick="n4()">4</button>
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="5" onclick="n5()">5</button>
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="6" onclick="n6()">6</button>
-        <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="-" onclick="nminus()">-</button>
-
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="1" onclick="n1()">1</button>
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="2" onclick="n2()">2</button>
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="3" onclick="n3()">3</button>
-        <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="x" onclick="nmultiply()">x</button>
-
-        <button type="submit" class="btn btn-outline-warning mt-2" style="width:45px;" id="0" onclick="n0()">0</button>
-        <button type="submit" class="btn btn-outline-primary mt-2" style="width:45px;" id="AC" onclick="AC()">AC</button>
-        <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="=" onclick="nequal()">=</button>
-        <button type="submit" class="btn btn-outline-danger mt-2" style="width:45px;" id="%" onclick="ndivide()">/</button>
-
-    </div>
     </center>
 
+    <script>
+
+
+        function n7() {
+            input.insertAdjacentText("beforeend", "7");
+        }
+        function n8() {
+            input.insertAdjacentText("beforeend", "8");
+        }
+        function n9() {
+            input.insertAdjacentText("beforeend", "9");
+        }
+        function nplus() {
+            input.insertAdjacentText("beforeend", "+");
+        }
+        function n4() {
+            input.insertAdjacentText("beforeend", "4");
+        }
+        function n5() {
+            input.insertAdjacentText("beforeend", "5");
+        }
+        function n6() {
+            input.insertAdjacentText("beforeend", "6");
+        }
+        function nminus() {
+            input.insertAdjacentText("beforeend", "-");
+        }
+        function n1() {
+            input.insertAdjacentText("beforeend", "1");
+        }
+        function n2() {
+            input.insertAdjacentText("beforeend", "2");
+        }
+        function n3() {
+            input.insertAdjacentText("beforeend", "3");
+        }
+        function nmultiply() {
+            input.insertAdjacentText("beforeend", "x");
+        }
+        function n0() {
+            input.insertAdjacentText("beforeend", "0");
+        }
+        function AC() {
+            document.getElementById("input").innerHTML = " ";
+        }
+        function nequal() {
+            cal = document.getElementById("input").innerText
+            if (cal.includes("+")) {
+                let operation = cal.split("+")
+                answer = parseInt(operation[0]) + parseInt(operation[1])
+            }
+            else if (cal.includes("-")) {
+                let operation = cal.split("-")
+                answer = parseInt(operation[0]) - parseInt(operation[1])
+            }
+            else if (cal.includes("x")) {
+                let operation = cal.split("x")
+                answer = parseInt(operation[0]) * parseInt(operation[1])
+            }
+            else if (cal.includes("/")) {
+                let operation = cal.split("/")
+                answer = parseInt(operation[0]) / parseInt(operation[1])
+            }
+            if (cal.length >= 18) {
+                document.getElementById("input").style.fontSize = "small"
+            }
+            document.getElementById("input").innerHTML = answer;
+        }
+        function ndivide() {
+            input.insertAdjacentText("beforeend", "/");
+        }
+
+    </script>
 </body>
+
 </html>
